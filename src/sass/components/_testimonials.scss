@@ -1,0 +1,130 @@
+// Importing the global files
+@use '../globals/variables' as *;
+
+// Styling the Testimonials component
+.testimonials {
+    display: flex;
+    gap: 1rem;
+    padding: 4rem 2rem;
+
+    // Styling the left side of the testimonials component
+    .left-testimonials {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1;
+        gap: 1rem;
+        text-transform: uppercase;
+        color: $light;
+
+        & > :nth-child(1) {
+            color: $orange;
+            font-weight: bold;
+        }
+
+        & > :nth-child(2),
+        & > :nth-child(3) {
+            font: {
+                size: 3rem;
+                weight: bold;
+            }
+        }
+
+        & > :nth-child(4) {
+            text-transform: none;
+            text-align: justify;
+            letter-spacing: 2px;
+            line-height: 2;
+        }
+
+        & > :nth-child(5) {
+            color: $orange;
+        }
+    }
+
+    .right-testimonials {
+        flex: 1;
+        position: relative;
+
+        > img {
+            position: absolute;
+            top: 2rem;
+            right: 8rem;
+            width: 17rem;
+            height: 20rem;
+            object-fit: cover;
+        }
+
+        .first-div {
+            position: absolute;
+            top: .875rem;
+            right: 9rem;
+            width: 17rem;
+            height: 20rem;
+            border: 2px solid $orange;
+            background-color: transparent;
+        }
+
+        .second-div {
+            position: absolute;
+            top: 4rem;
+            right: 7rem;
+            width: 17rem;
+            height: 20rem;
+            background: $planCard;
+        }
+
+        .arrows {
+            display: flex;
+            gap: .75rem;
+            position: absolute;
+            bottom: 1rem;
+            left: 3rem;
+
+            > img {
+                width: 1.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .testimonials {
+        flex-direction: column;
+
+        .left-testimonials {
+            > span {
+                &:nth-child(2),
+                &:nth-child(3) {
+                    font-size: xx-large;
+                }
+
+                &:nth-child(4) {
+                    text-align: left;
+                }
+            }
+        }
+
+        .right-testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+
+            > div {
+                position: relative;
+                display: none;                
+            }
+
+            > img {
+                position: relative;
+                top: 0;
+                right: 0;
+                align-self: center;
+            }
+        }
+    }
+}

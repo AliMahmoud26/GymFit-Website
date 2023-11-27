@@ -1,0 +1,87 @@
+// Importing the global files
+@use '../globals/variables' as *;
+
+
+// Styling the join us component
+.join {
+    display: flex;
+    padding: 6rem 2rem;
+    gap: 10rem;
+
+    // Styling the left side of the join component
+    .left-join {
+        color: $light;
+        text-transform: uppercase;
+        position: relative;
+        font: {
+            size: 3rem;
+            weight: bold;
+        }
+
+        > hr {
+            position: absolute;
+            width: 10.5rem;
+            border: 2px solid $orange;
+            border-radius: 20%;
+        }
+
+        > div {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    // Styling the right side of the join component
+    .right-join {
+        display: flex;
+        justify-self: center;
+        align-items: flex-end;
+
+        .email-container {
+            display: flex;
+            gap: 3rem;
+            background-color: $gray;
+            padding: 1rem 2rem;
+
+            input {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: $light;
+
+                &::placeholder {
+                    color: $lightgray;
+                }
+            }
+
+            .join-btn {
+                background-color: $orange;
+                color: $light;
+                padding: .75rem 1rem;
+                border: none;
+                outline: none;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .join {
+        flex-direction: column;
+        gap: 1rem;
+
+        
+        .left-join {
+            font-size: x-large;
+            flex-direction: column;
+
+            div {
+                padding-top: .25rem;
+            }
+        }
+    }
+  }

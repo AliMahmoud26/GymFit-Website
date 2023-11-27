@@ -1,0 +1,427 @@
+// Importing the global files
+@use '../globals/variables' as *;
+
+
+// Styling the hero component
+.hero {
+    display: flex;
+    justify-content: space-between;
+    // background-color: $appColor;
+
+    .hero-blur {
+        width: 22rem;
+        height: 30rem;
+        left: 0;
+    }
+
+    .left-hero {
+        padding: 2rem;
+        padding-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 3;
+
+        // Styling the best ad section and attacing it with animation
+        .the-best-ad {
+            margin-top: 4rem;
+            background-color: #363d42;
+            border-radius: 4rem;
+            width: fit-content;
+            padding: 1.25rem .875rem;
+            text-transform: uppercase;
+            color: $light;
+            position: relative;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            > div {
+                position: absolute;
+                background-color: $orange;
+                width: 5rem;
+                height: 80%;
+                left: .5rem;
+                border-radius: 3rem;
+                z-index: 1;
+            }
+
+            span {
+                z-index: 999;
+            }
+        }
+
+        // Styling the main text of the hero component
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            // gap: 1.5rem;  
+            text-transform: uppercase; 
+            color: $light;
+            text-overflow: inherit;
+            font: {
+                size: 4.5rem;
+                weight: bold;
+            } 
+            
+            .description {
+                // margin-top: -2rem;
+                > span {
+                    font: {
+                        size: 1rem;
+                        weight: 300;
+                    }
+                    text-transform: none;
+                    letter-spacing: 1px;
+                    width: 80%;
+                }
+            }
+        }
+        
+        // Figures of the site
+        .figures {
+            display: flex;
+            gap: 2rem;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    &:first-child {
+                        color: $light;
+                        font-size: 2rem;
+                    }
+
+                    &:nth-child(2) {
+                        color: $gray;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        // Styling the hero buttons
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            font-weight: normal;
+
+            .btn {
+                background-color: $light;
+                padding: .5rem;
+                font-weight: bold;
+                border: .25rem solid transparent;
+                transition: $transition;
+                cursor: pointer;
+
+                &.filled {
+                    color: $light;
+                    background-color: $orange;
+                    width: 8rem;
+                }
+
+                &.transparent {
+                    color: $light;
+                    background-color: transparent;
+                    width: 8rem;
+                    border: 2px solid $orange;
+                }
+            }
+        }
+
+    }
+
+    .right-hero {
+        flex: 1;
+        position: relative;
+        background-color: $orange;
+
+        .hero-image {
+            position: absolute;
+            top: 10rem;
+            right: 8rem;
+            width: 23rem;
+            z-index: 5;
+        }
+
+        .hero-image-back {
+            position: absolute;
+            top: 4rem;
+            right: 20rem;
+            width: 15rem;
+            // z-index: -1;
+        }
+
+        .btn {
+            position: absolute;
+            right: 3rem;
+            top: 1.5rem;
+            color: $dark;
+            background-color: $light;
+            border: none;
+            outline: none;
+            padding: .75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                color: $orange;
+            }
+        }
+
+        .heart-rate {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 1rem;
+            background-color: $darkGrey;
+            width: fit-content;
+            padding: 1rem;
+            border-radius: .25rem;
+            position: absolute;
+            right: 4rem;
+            top: 7rem;
+
+            img {
+                width: 2rem;
+            }
+
+            span {
+                &:first-of-type {
+                    color: $gray;
+                }
+
+                &:last-of-type {
+                    color: $light;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        .calories {
+            display: flex;
+            gap: 2rem;
+            background-color: $caloryCard;
+            border-radius: .25rem;
+            padding: 1rem;
+            width: fit-content;
+            position: absolute;
+            top: 32rem;
+            right: 27rem;
+
+            img {
+                width: 3rem;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                span {
+                    &:first-of-type {
+                        color: $gray;
+                    }
+
+                    &:last-of-type {
+                        color: $light;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Media screens 1050px
+// @media screen and (max-width: 1050px) {
+//     .hero {
+//         .right-hero {
+//             .hero-image {
+//                 width: 15rem;
+//             }
+
+//             .hero-image-back {
+//                 position: absolute;
+//                 top: 4rem;
+//                 right: 5rem;
+//                 width: 10rem;
+//                 // z-index: -1;
+//             }
+
+//             .btn {
+//                 padding: .5rem;
+//             }
+
+//             .heart-rate {
+//                 position: absolute;
+//                 right: 2rem;
+//                 top: 5rem;
+    
+//                 img {
+//                     width: 1rem;
+//                 }
+    
+//                 span {
+//                     &:first-of-type,
+//                     &:last-of-type {
+//                         font-size: .875rem;
+//                     }
+//                 }
+//             }
+
+//             .calories {
+//                 padding: .875rem;
+//                 position: absolute;
+//                 top: 26rem;
+//                 left: -15rem;
+    
+//                 img {
+//                     width: 1.5rem;
+//                 }
+    
+//                 .info {
+//                     span {
+//                         &:first-of-type,
+//                         &:last-of-type {
+//                             font-size: .875rem;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+
+//         .left-hero {
+//             .hero-text { 
+//                 gap: 1.75rem;
+//                 font: {
+//                     size: 3.5rem;
+//                 } 
+                
+//                 .description {
+//                     // margin-top: -2rem;
+//                     > span {
+//                         font: {
+//                             size: .875rem;
+//                         }
+//                         text-transform: none;
+//                         letter-spacing: 1px;
+//                         width: 80%;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// Media screens 991px
+@media screen and (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+
+        .hero-blur {
+            width: 14rem;
+        }
+
+        .left-hero {
+            .the-best-ad {
+                margin-top: 0;
+                font-size: small;
+                align-self: center;
+                transform: scale(.9);
+            }
+    
+            .hero-text {
+                font-size: xx-large;
+                align-items: center;
+                justify-content: center;
+    
+                > div {
+                    &:first-of-type,
+                    &:nth-of-type(2) {
+                        font-size: 3.5rem;
+                    }
+    
+                    &:nth-of-type(3) {
+                        font-size: small;
+                        letter-spacing: 1px;
+                        text-align: center;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+    
+            .figures {
+                justify-content: center;
+                margin-top: 1rem;
+    
+                > div {
+    
+                    > span {
+                        &:nth-of-type(1) {
+                            font-size: large;
+                        }
+        
+                        &:nth-of-type(2) {
+                            font-size: small;
+                        }
+                    }
+                }
+            }
+    
+            .hero-btns {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+
+        .right-hero {
+            position: relative;
+            background: none;
+            display: none;
+
+            .heart-rate {
+                left: 1rem;
+                top: 2rem;
+            }
+
+            .calories {
+                position: relative;
+                top: 5rem;
+                left: 2rem;
+
+                img {
+                    width: 2rem;
+                }
+
+                > div {
+                    > span {
+                        &:nth-child(2) {
+                            color: $light;
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+
+            .hero-image {
+                position: absolute;
+                width: 15rem;
+                left: 7rem;
+                top: 4rem;
+                display: flex;
+                align-self: center;
+            }
+
+            .hero-image-back {
+                width: 15rem;
+                left: 2rem;
+                top: 0rem;
+            }
+        }
+
+    }
+}

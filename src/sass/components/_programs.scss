@@ -1,0 +1,84 @@
+// Importing the global files
+@use '../globals/variables' as *;
+
+
+// Styling the programs component
+.programs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 6rem 2rem;
+
+    // .programs-header {
+    //     display: flex;
+    //     justify-content: center;
+    //     gap: 2rem;
+    //     color: $light;
+    //     text-transform: uppercase;
+    //     font: {
+    //         size: 3rem;
+    //         weight: bold;
+    //         style: italic;
+    //     }
+    // }
+
+    .programs-categories {
+        display: flex;
+        gap: 1rem;
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: $gray;
+            padding: 2rem;
+            gap: 1rem;
+            color: $light;
+            cursor: pointer;
+            // transition: $transition;
+
+            &:hover {
+                background: $planCard;
+            }
+
+            >:nth-child(1) {
+                width: 2rem;
+                height:  2rem;
+                fill: $light;
+            }
+
+            >:nth-child(2) {
+                font-weight: bold;
+            }
+
+            >:nth-child(3) {
+                font-size: .875rem;
+                line-height: 1.8;
+            }
+
+            .join-now {
+                display: flex;
+                align-items: center;
+                // gap: 1rem;
+
+                > img {
+                    width: 1rem;
+                    margin-left: .5rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .programs {
+        .programs-categories {
+            flex-direction: column;
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+}
